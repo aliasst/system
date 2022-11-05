@@ -11,13 +11,13 @@ class App
 
     public function __construct ()
     {
-        /*$query = trim(urldecode($_SERVER['QUERY_STRING']), '/');*/
+        $query = trim(urldecode($_SERVER['QUERY_STRING']), '/');
 
         new ErrorHandler();
         /*session_start();*/
         self::$app = Registry::getInstance();
         $this->getParams();
-        /*Router::dispatch($query);*/
+        Router::dispatch($query);
     }
 
     protected function getParams()
