@@ -1,0 +1,11 @@
+/tmp/
+/.idea/
+/vendor/*
+!/vendor/wfm/
+/public/assets/
+/public/uploads/
+/public/downloads/
+/public/adminlte/
+*.jpg
+*.jpeg
+*.png
