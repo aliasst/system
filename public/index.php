@@ -7,3 +7,15 @@ new \core\App();
 
 
 
+$db = \core\Db::getInstance();
+
+/*$articles = $db->query('SELECT * FROM `user`;');
+debug($articles);
+
+
+$result = $db->query(
+    'SELECT * FROM `user` WHERE id = :id;',
+    [':id' => 1]
+);
+var_dump($result);
+*/
