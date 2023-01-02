@@ -27,6 +27,9 @@
 
             <button type="submit" class="btn btn-primary">Сохранить</button>
 
+            <br><br>
+            <a href="/category" class="btn btn-default">Вернуться назад</a>
+
         </form>
 
         <?php

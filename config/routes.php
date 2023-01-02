@@ -6,10 +6,16 @@ use core\Router;
 Router::add('^page/(?P<slug>[a-z0-9-]+)/?$', ['controller' => 'Page', 'action' => 'view']);
 Router::add('^product/(?P<slug>[a-z0-9-]+)/?$', ['controller' => 'Product', 'action' => 'view']);
 
+Router::add('^user/edit/(?P<id>[0-9]+)/?$', ['controller' => 'User', 'action' => 'edit']);
+Router::add('^user/delete/(?P<id>[0-9]+)/?$', ['controller' => 'User', 'action' => 'delete']);
+Router::add('^users$', ['controller' => 'User', 'action' => 'index']);
+
 Router::add('^category/add/?$', ['controller' => 'Category', 'action' => 'add']);
 Router::add('^category/delete/(?P<id>[0-9]+)/?$', ['controller' => 'Category', 'action' => 'delete']);
 Router::add('^category$', ['controller' => 'Category', 'action' => 'index']);
 
+Router::add('^pdfweek', ['controller' => 'Entity', 'action' => 'pdfweek']);
+Router::add('^pdf$', ['controller' => 'Entity', 'action' => 'pdf']);
 Router::add('^addexpenses/(?P<id>[0-9]+)/?$', ['controller' => 'Entity', 'action' => 'addexpenses']);
 Router::add('^viewexpenses/(?P<id>[0-9]+)/?$', ['controller' => 'Entity', 'action' => 'viewexpenses']);
 Router::add('^deleteexpenses/(?P<id>[0-9]+)/?$', ['controller' => 'Entity', 'action' => 'deleteexpenses']);

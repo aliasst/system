@@ -9,6 +9,8 @@ class MainController extends AppController
 {
     public function indexAction()
     {
+        //debug($_SESSION['user']);
+
         $entitymodel = new Entity();
         $legal = count($entitymodel->findAll('legal'));
         $physical = count($entitymodel->findAll('physical'));

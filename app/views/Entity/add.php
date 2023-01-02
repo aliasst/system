@@ -27,6 +27,13 @@
 
             <button type="submit" class="btn btn-primary">Сохранить</button>
 
+            <br><br>
+            <?php if (isset($_GET['type']) & $_GET['type'] == 'legal') { ?>
+            <a href="/legal-entities" class="btn btn-default">Вернуться назад</a>
+            <?php }  else { ?>
+                <a href="/physical-entities" class="btn btn-default">Вернуться назад</a>
+            <?php }  ?>
+
         </form>
 
         <?php

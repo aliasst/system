@@ -1,11 +1,11 @@
 <div class="login-box">
     <div class="login-logo">
-        <b>Admin</b>LTE
+        <b>Система учета затрат </b>
     </div>
     <!-- /.login-logo -->
     <div class="card">
         <div class="card-body login-card-body">
-            <p class="login-box-msg">Sign in to start your session</p>
+            <p class="login-box-msg">Введите логин и пароль, чтобы войти</p>
 
             <?php if (!empty($_SESSION['errors'])): ?>
                 <div class="alert alert-danger alert-dismissible">
@@ -17,15 +17,15 @@
 
             <form method="post">
                 <div class="input-group mb-3">
-                    <input type="email" name="email" class="form-control" placeholder="Email" required>
+                    <input type="text" name="login" class="form-control" placeholder="Логин" required>
                     <div class="input-group-append">
                         <div class="input-group-text">
-                            <span class="fas fa-envelope"></span>
+                            <span class="fas fa-user"></span>
                         </div>
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="password" name="password" class="form-control" placeholder="Password" required>
+                    <input type="password" name="password" class="form-control" placeholder="Пароль" required>
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>
@@ -35,7 +35,7 @@
                 <div class="row">
                     <!-- /.col -->
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        <button type="submit" class="btn btn-primary btn-block">Войти</button>
                     </div>
                     <!-- /.col -->
                 </div>

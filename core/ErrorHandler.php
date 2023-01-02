@@ -38,7 +38,8 @@ class ErrorHandler {
         if($response == 0) {
             $response = 404;
         }
-        http_response_code($response);
+
+        http_response_code(500);
 
         if ($response == 404 & !DEBUG) {
             require_once WWW . '/errors/404.php';

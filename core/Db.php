@@ -31,7 +31,7 @@ class Db
             return null;
         }
 
-        return $sth->fetchAll();
+        return $sth->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     public function delete(string $sql, $params = []): ?bool

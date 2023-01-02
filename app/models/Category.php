@@ -4,10 +4,11 @@ namespace app\models;
 
 class Category extends AppModel
 {
-    public function findAll(): array
+    public function findAll(int $type = 1): array
     {
         return $this->db->query(
-            'SELECT * FROM `categories`;'
+            'SELECT * FROM `categories` WHERE type = :type;',
+            [':type' => $type]
         );
     }
 
@@ -29,11 +30,14 @@ class Category extends AppModel
 
     }
 
-    public function add(string $name): bool
+    public function add(string $name, int $type = 1): bool
     {
         return $this->db->save(
-            'INSERT INTO `categories` (name) VALUES (:name)',
-            [':name' => $name]
+            'INSERT INTO `categories` (name, type) VALUES (:name, :type)',
+            [
+                ':name' => $name,
+                ':type' => $type,
+            ]
         );
 
     }

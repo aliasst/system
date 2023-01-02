@@ -2,9 +2,9 @@
 
 <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
-        <b>Version</b> 1.0.0
+        <b>Версия</b> 1.0
     </div>
-    <strong>Copyright &copy; 2022.</strong> All rights reserved.
+    <strong>Система учета затрат физических и юридических лиц  &copy; 2023.</strong> Все права защищены.
 </footer>
 
 <div class="logs">

@@ -58,9 +58,10 @@ abstract class Controller
     public function error_404 ($folder = 'Error', $view = '404', $response = 404)
     {
         http_response_code($response);
-        $this->setMeta(___('tpl_error_404'));
+        $this->setMeta('Ошибка');
         $this->route['controller'] = $folder;
         $this->view = $view;
+        $this->layout = 'system';
     }
 
 }
