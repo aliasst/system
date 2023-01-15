@@ -10,6 +10,10 @@ Router::add('^user/edit/(?P<id>[0-9]+)/?$', ['controller' => 'User', 'action' =>
 Router::add('^user/delete/(?P<id>[0-9]+)/?$', ['controller' => 'User', 'action' => 'delete']);
 Router::add('^users$', ['controller' => 'User', 'action' => 'index']);
 
+Router::add('^currency/add/?$', ['controller' => 'Currency', 'action' => 'add']);
+Router::add('^currency/delete/(?P<id>[0-9]+)/?$', ['controller' => 'Currency', 'action' => 'delete']);
+Router::add('^currency$', ['controller' => 'Currency', 'action' => 'index']);
+
 Router::add('^category/add/?$', ['controller' => 'Category', 'action' => 'add']);
 Router::add('^category/delete/(?P<id>[0-9]+)/?$', ['controller' => 'Category', 'action' => 'delete']);
 Router::add('^category$', ['controller' => 'Category', 'action' => 'index']);

@@ -169,11 +169,10 @@
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th>Cумма</th>
-
-                            <th>Неделя</th>
                             <th>Месяц</th>
+                            <th>Неделя</th>
                             <th>Год</th>
+                            <th>Cумма</th>
 
                             <th><i class="far fa-trash-alt"></i></th>
 
@@ -186,10 +185,10 @@
                             $sum = $sum + $expense['sum'];
                             ?>
                             <tr>
-                                <td width="50"><?= $expense['sum'] ?></td>
-                                <td width="70"><?php if($expense['week']) echo $expense['week']; ?></td>
-                                <td width="70"><?= $expense['month'] ?></td>
-                                <td width="70"><?= $expense['year'] ?></td>
+                                <td width="70"><?= $expense['month_name'] ?></td>
+                                <td width="70"><?php if($expense['week']) echo $expense['week_name']; ?></td>
+                                <td width="70"><?= $expense['year'] ?> г.</td>
+                                <td width="120"><?= $expense['sum'] ?> <?= $expense['short_name'] ?></td>
 
 
                                 <td width="70">
@@ -241,13 +240,13 @@
 
                         ?>
                         <tr>
-                            <td width="50"><?= $expense['sum'] ?></td>
+                            <td width="120"><?= $expense['sum'] ?> <?= $expense['short_name'] ?></td>
                             <td>
                                 <?= $expense['name'] ?>
                             </td>
-                            <td width="70"><?php if($expense['week']) echo $expense['week']; ?></td>
-                            <td width="70"><?= $expense['month'] ?></td>
-                            <td width="70"><?= $expense['year'] ?></td>
+                            <td width="70"><?php if($expense['week']) echo $expense['week_name']; ?></td>
+                            <td width="70"><?= $expense['month_name'] ?></td>
+                            <td width="70"><?= $expense['year'] ?> г.</td>
                            
 
                             <td width="70">

@@ -67,9 +67,16 @@
                     </a>
                 </li>
 
+                    <li class="nav-item">
+                        <a href="<?= PATH ?>/currency" class="nav-link">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>Валюта</p>
+                        </a>
+                    </li>
+
                 <li class="nav-item">
                     <a href="<?= PATH ?>/users" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="nav-icon fas fa-user"></i>
                         <p>Пользователи</p>
                     </a>
                 </li>

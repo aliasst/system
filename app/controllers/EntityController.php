@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Category;
+use app\models\Currency;
 use app\models\Entity;
 use League\Flysystem\Exception;
 use PhpOffice\PhpSpreadsheet\IOFactory;
@@ -257,6 +258,8 @@ class EntityController extends AppController
 
             $expenses = $this->model->loadExpense($data);
 
+            /*debug($expenses);*/
+
 
             if($_POST['week'] == 6) {
 
@@ -302,6 +305,11 @@ class EntityController extends AppController
             $categorymodel = new Category();
             $categories = $categorymodel->findAll($type);
 
+            $currencymodel = new Currency();
+            $currencies = $currencymodel->findAll();
+
+
+
             if(!empty($_POST)) {
 
                 $data = $_POST;
@@ -333,7 +341,7 @@ class EntityController extends AppController
             $entity = $entity[0];
 
             $title = "Добавить расход для - {$entity['name']}";
-            $this->set(compact('entity','categories', 'title'));
+            $this->set(compact('entity','categories', 'currencies', 'title'));
             $this->setMeta($title);
 
 

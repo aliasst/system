@@ -139,6 +139,28 @@
                 <input type="text" name="sum" class="form-control" id="description" placeholder="Расход" value="">
             </div>
 
+            <div class="form-group">
+                <label class="" for="currency">Валюта</label>
+                <select class="form-control" name="currency" id="currency" required="required">
+
+
+                    <?php foreach($currencies as $currency):?>
+
+                        <?php
+                        $selected = '';
+                        if(isset($_SESSION['form_data']['currency'])){
+                            $selected = ($_SESSION['form_data']['currency'] == $currency['id']) ? 'selected' : '';
+                        }
+                        ?>
+                        <option <?= $selected ?> value="<?= $currency['id']?>">
+                            <?= $currency['short_name']?></option>
+                    <?php endforeach;?>
+
+
+                </select>
+
+            </div>
+
 
 
             <button type="submit" class="btn btn-primary">Сохранить</button>
@@ -147,7 +169,7 @@
 
         <?php
         if (isset($_SESSION['form_data'])) {
-            var_dump($_SESSION['form_data']['category']);
+
 
             unset($_SESSION['form_data']);
         }

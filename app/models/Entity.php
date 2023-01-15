@@ -66,11 +66,12 @@ class Entity extends AppModel
     public function saveExpense($data): bool
     {
         return $this->db->save(
-            'INSERT INTO `expenses` (sum, entity_id, category_id, year, month, week) VALUES (:sum, :entity, :category, :year, :month, :week)',
+            'INSERT INTO `expenses` (sum, entity_id, category_id, currency_id, year, month, week) VALUES (:sum, :entity, :category, :currency, :year, :month, :week)',
             [
                 ':sum' => $data['sum'],
                 ':entity' => $data['entity'],
                 ':category' => $data['category'],
+                ':currency' => $data['currency'],
                 ':year' => $data['year'],
                 ':month' => $data['month'],
                 ':week' => $data['week'],
@@ -104,7 +105,12 @@ class Entity extends AppModel
         //debug($paramspart);
 
         $expenses = $this->db->query(
-            "SELECT e.*, c.name  FROM `expenses` e JOIN `categories` c ON c.id = e.category_id $sqlpart",
+            "SELECT e.*, c.name, cr.short_name, w.week_name, m.month_name  FROM `expenses` e 
+            JOIN `categories` c ON c.id = e.category_id 
+            JOIN `currency` cr ON cr.id = e.currency_id
+            JOIN `weeks` w ON w.id = e.week
+            JOIN `months` m ON m.id = e.month
+            $sqlpart",
             $paramspart
         );
 
